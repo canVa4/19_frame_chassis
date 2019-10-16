@@ -275,3 +275,15 @@ void usart_exc_DMA_vega()
         memset(DMAUSART_RX_BUF_vega,0,98);        
     }
 }
+
+/**开启dma
+*参数：void
+*返回值： void 
+*说明: 将此函数加在while循环之前
+*by：zx
+*/
+void usart_dma_init(){
+    HAL_UART_Receive_DMA(&huart3, (uint8_t *)&DMAaRxBuffer, 99);
+    HAL_UART_Receive_DMA(&huart1, (uint8_t *)&DMAaRxBuffer_vega, 99);
+    __HAL_UART_ENABLE_IT(&CMD_USART,UART_IT_IDLE);
+}

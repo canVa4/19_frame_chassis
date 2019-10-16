@@ -19,3 +19,4 @@ void can_id_init()
     send_id.motor1_id = 401;
     send_id.motor2_id = 402;   
 }
+

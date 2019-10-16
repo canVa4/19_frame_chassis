@@ -332,7 +332,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart3_tx);
 
   /* USER CODE BEGIN USART3_MspInit 1 */
-
+ 
   /* USER CODE END USART3_MspInit 1 */
   }
 }
@@ -399,7 +399,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     /* USART1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspDeInit 1 */
-
+     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
   /* USER CODE END USART1_MspDeInit 1 */
   }
   else if(uartHandle->Instance==USART2)
